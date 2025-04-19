@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,cmake,c++,conan,clion
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,cmake,c++,conan,clion
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,cmake,c++,conan,clion,git
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,cmake,c++,conan,clion,git
 
 ### C++ ###
 # Prerequisites
@@ -189,6 +189,21 @@ deactivate_run.sh
 environment_run.ps1.env
 environment_run.sh.env
 
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -208,4 +223,4 @@ environment_run.sh.env
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,cmake,c++,conan,clion
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,cmake,c++,conan,clion,git
