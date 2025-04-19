@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Backend options
 option(OPTIONS_WITH_YAML "Enable YAML backend" ON)
 option(OPTIONS_WITH_JSON "Enable JSON backend" ON)
+option(BUILD_TESTS "Build tests" ON)
 
 # Dependencies
 set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/third_party)
@@ -51,5 +52,30 @@ if(NOT nlohmann_json_FOUND AND OPTIONS_WITH_JSON)
     endif()
 endif()
 
-# Always build core
+# GTEST
+option(DOWNLOAD_GTEST "Download and use GTest library" ON)
+
+# Try to find GTest package
+find_package(GTest QUIET)
+
+# If GTest is not found, use FetchContent to download it
+if(NOT GTest_FOUND AND BUILD_TESTS)
+    if(DOWNLOAD_GTEST)
+        message(STATUS "Fetching GTest...")
+        FetchContent_Declare(
+        GTest
+        URL https://github.com/google/googletest/archive/refs/tags/release-1.12.1.zip
+        )
+        FetchContent_MakeAvailable(GTest)
+    endif()
+endif()
+
+# options library sources
 add_subdirectory(src)
+
+# tests
+if(BUILD_TESTS)
+    message(STATUS "Building tests")
+    enable_testing()
+    add_subdirectory(tests)
+endif()

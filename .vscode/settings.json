@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "array": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp",
+        "atomic": "cpp",
+        "any": "cpp",
+        "format": "cpp",
+        "optional": "cpp"
+    }
+}
